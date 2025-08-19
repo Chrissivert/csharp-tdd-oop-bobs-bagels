@@ -1,33 +1,37 @@
+namespace exercise;
+
 public class Store
 {
-    public string Name { get; set; }
-    public decimal Price { get; set; }
-    public List<Filling> Fillings { get; set; } = new List<Filling>();
-    public int BasketSize { get; set; } = 10;
+    public List<Item> AvailableItems { get; private set; }
 
-    public int SetBasketSize(int i)
+    public Store()
     {
-        BasketSize = i;
-        return BasketSize;
+        AvailableItems = CreateFakeItems();
     }
 
-    public decimal PriceOfBagel(Store item)
+    private List<Item> CreateFakeItems()
     {
-        return item.Price;
-    }
+        return new List<Item>
+        {
+            // Bagels
+            new Item("BGLO", 0.49m, "Bagel", "Onion"),
+            new Item("BGLP", 0.39m, "Bagel", "Plain"),
+            new Item("BGLE", 0.49m, "Bagel", "Everything"),
+            new Item("BGLS", 0.49m, "Bagel", "Sesame"),
 
-    public decimal PriceOfFilling(Filling filling)
-    {
-        return filling.Price;
-    }
+            // Coffee
+            new Item("COFB", 0.99m, "Coffee", "Black"),
+            new Item("COFW", 1.19m, "Coffee", "White"),
+            new Item("COFC", 1.29m, "Coffee", "Cappuccino"),
+            new Item("COFL", 1.29m, "Coffee", "Latte"),
 
-    public void AddFilling(Store item, Filling filling)
-    {
-        item.Fillings.Add(filling);
-    }
-
-    public bool IsInStock(Store item)
-    {
-        return true;
+            // Fillings
+            new Item("FILB", 0.12m, "Filling", "Bacon"),
+            new Item("FILE", 0.12m, "Filling", "Egg"),
+            new Item("FILC", 0.12m, "Filling", "Cheese"),
+            new Item("FILX", 0.12m, "Filling", "Cream Cheese"),
+            new Item("FILS", 0.12m, "Filling", "Smoked Salmon"),
+            new Item("FILH", 0.12m, "Filling", "Ham")
+        };
     }
 }

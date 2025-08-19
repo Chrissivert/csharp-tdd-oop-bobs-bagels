@@ -1,8 +1,15 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using exercise;
 
-Item item = new Item("BGLO", 0.49m, "Bagel", "Onion");
-Console.WriteLine(item.Price);
+Store store = new Store();
 Basket basket = new Basket();
-basket.AddItem(item);
+basket.AddItem(store.AvailableItems[1]);
+basket.AddItem(store.AvailableItems[2]);
+basket.AddItem(store.AvailableItems[2]);
+basket.AddItem(store.AvailableItems[2]);
+basket.AddItem(store.AvailableItems[2]);
+basket.AddItem(store.AvailableItems[2]);
+basket.AddItem(store.AvailableItems[2]);
+basket.AddItem(store.AvailableItems[9]);
+
+basket.PriceInBasket();
 Console.WriteLine(basket);

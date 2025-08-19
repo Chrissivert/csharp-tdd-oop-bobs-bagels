@@ -1,3 +1,5 @@
+namespace exercise;
+
 public class Item
 {
     public string SKU { get; set; }
@@ -15,6 +17,6 @@ public class Item
 
     public override string ToString()
     {
-        return $"{Name} {Price:C}";
+        return $" {SKU} {Name} {Price:C} {Variant}";
     }
 }
