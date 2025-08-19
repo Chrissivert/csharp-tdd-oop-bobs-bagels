@@ -52,7 +52,6 @@ public class Basket
             total += Items.Where(item => !item.SKU.StartsWith("BGLE"))
                         .Sum(item => item.Price);
 
-            Console.WriteLine("To pay: " + total);
             return total;
         }
 
